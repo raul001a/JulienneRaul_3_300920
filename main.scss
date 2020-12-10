@@ -1,0 +1,481 @@
+﻿
+//variables
+
+// defintion des polices
+@font-face {
+    font-family: 'Shrikhand';
+    src: url('polices/Shrikhand-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'roboto-light';
+    src: url('polices/roboto-light.ttf');
+}
+
+@font-face {
+    font-family: 'roboto-medium';
+    src: url('polices/roboto-medium.ttf');
+}
+
+//variables
+
+//polices
+$title-police:shrikhand;
+$text-police-thick:roboto-medium;
+$text-police-thin:roboto-light;
+// peut-etre créer une map avec les tailles de polices
+// comment gérer les tailles avec em
+
+//couleurs
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$third-color: #99E2D0;
+$background-color:black;
+
+
+// mixin : exemple le gradient pour le btn
+// une meme classe pour le btn gradient sur les deux feuilles essai
+//mixin à argument %age et couleur pour background color
+// mixin à argument pour le box-shadow ?
+
+body {
+    margin: 0 auto;
+}
+* {
+    box-sizing:border-box;
+    // vérifier que c'est correct
+}
+
+header {
+    display: flex;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+
+    .header__logo {
+        width: 165px;
+
+        & img {
+            width: 100%;
+        }
+    }
+    .header__arrow {
+        font-size:1.2em;
+        color:black;
+        position:relative;
+        right:240px;
+    }
+}
+
+.placeholder {
+    height: 50Px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lighten($background-color,91%);
+    //mettre une box-shadow juste sur le haut
+    &__search {
+        display: flex;
+        align-items:center;
+        font-size: 1em;
+        width:165px;
+    }
+
+    .where {
+        font-family: $text-police-thick;
+        font-size: 1em;
+        background-color:transparent;
+        border:none;
+        margin-left:15px;
+        color:black;
+        &::placeholder {
+            color:black;
+            opacity:1;
+            // pourquoi ca marche mais j'ai l'erreur dans le lecteur
+        }
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 10px;
+    background-color: lighten($background-color,96%);
+
+    & h1 {
+        width: 70%;
+        text-align: center;
+        font-family: $text-police-thick;
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 15px 0;
+    }
+
+    & p {
+        width: 90%;
+        margin: 5px 0;
+        margin: 0;
+        text-align: center;
+        font-family: $text-police-thin;
+        font-size: 1.1em;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        align-items: center;
+        margin: 25px 0;
+        padding: 15px 20px;
+        border-radius: 25px;
+        color: white;
+        font-family: $text-police-thick;
+        font-size: 1em;
+        background: linear-gradient(175deg, $secondary-color, $primary-color 80%);
+        box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
+
+        &:hover {
+            box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
+        }
+    }
+}
+
+.fonct {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    & h1 {
+        font-family: $text-police-thick;
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 30px 0px;
+    }
+
+    & ol {
+        font-family: $text-police-thick;
+        font-size: 1em;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        border:2px solid black;
+
+        & li {
+            height: 75px;
+            width: 320px;
+            border:2px dotted red;
+            cursor: pointer;
+            // display:flex; cela enlève les numéros
+            //align-items:center; ne sert à rien sans le display flex
+            
+            border-radius: 25px;
+            margin: 10px 0;
+            background-color: lighten($background-color,96%);
+            box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
+
+            &:hover {
+                background-color: lighten($primary-color,35%);
+                box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
+            }
+        }
+    }
+}
+
+.resto {
+    display: flex;
+    flex-direction: column;
+    background-color: lighten($background-color,96%);
+    padding: 20px;
+
+    & h1 {
+        font-family: $text-police-thick;
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 30px 0px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        width: 335px;
+        height: 250px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+        box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
+
+        &:hover {
+            box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
+        }
+
+        &__img {
+            height: 173px;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+            }
+        }
+
+        &__description {
+            padding: 10px;
+            height: 162px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            &__name {
+                font-family: $text-police-thick;
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+
+            &__place {
+                font-family: $text-police-thin;
+                font-size: 1.1em;
+            }
+        }
+
+        &__heart {
+            font-size: 1.5em;
+            position: absolute;
+            bottom: 50px;
+            left: 290px;
+
+            & .heart {
+                position: absolute;
+                top: 0;
+                left: 0;
+                -webkit-text-stroke: 1px white;
+                cursor: pointer;
+                transition: 0s 0.28s;
+                color: black;
+            }
+
+            & .heart--full {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient(175deg, $secondary-color, $primary-color 80%);
+                -webkit-background-clip: text;
+                // pourquoi ca marche mais j'ai l'erreur dans le lecteur
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 0px white;
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: 50% 90%;
+                transition: 0.3s ease-in-out;
+            }
+
+            & .heart:hover > .heart--full {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            & .heart:hover {
+                color: white;
+            }
+        }
+
+        &__new {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            height: 28px;
+            width: 78px;
+            border-radius: 2px;
+            font-family: $text-police-thick;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: darken($third-color,40%);
+            background-color: $third-color;
+        }
+    }
+}
+
+footer {
+    height: 200px;
+    background-color: lighten($background-color,20%);
+    padding: 25px;
+
+    .footer__logo {
+        width: 100px;
+
+        & img {
+            width: 100%;
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(101%);
+        }
+    }
+
+    .footer__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 20px 0;
+        color: white;
+        font-family: $text-police-thin;
+        font-size: 0.9em;
+        border: 1px yellow solid;
+
+        &--bold {
+            display: flex;
+            border: 1px green solid;
+            font-weight: bold;
+
+
+            & :nth-child(2) {
+                /*color: green;*/
+                position: relative;
+                right: -50px;
+                // attention ce n'est pas aligné car le -50px part du bord droit de icon
+                border: 1px purple solid;
+            }
+
+            & .icon {
+                display: flex;
+                align-items: center;
+                font-size: 0.8em;
+            }
+        }
+
+        & li {
+            margin: 10px 0;
+
+            & a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+// partie css pour les pages annexes
+
+.photo-menu {
+    height: 260px;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    // si je fais Position:relative et bottom:50px, il y a un décalage en bas
+    background-color: lighten($background-color,96%);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+
+    &__bloc {
+        
+    }
+}
+
+// à renommer et à nester
+
+.btn-menu {
+    margin: 100px;
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 70px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn-menu__description {
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+    transition: width 0.4s 0.1s ease-in-out;
+}
+
+.btn-menu__description__1 {
+    font-family: roboto-regular;
+    font-weight: bold;
+    font-size: 1.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-menu__description__2 {
+    font-family: roboto-light;
+    font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-menu__price {
+    position: absolute;
+    left: 300px;
+    margin: 15px;
+    bottom: 0;
+    font-family: roboto-regular;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: transform 0.4s 0.1s ease-in-out;
+}
+
+.btn-menu__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 350px;
+    background-color: #99E2D0;
+    color: white;
+    font-size: 1.5em;
+    width: 55px;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.btn-menu:hover > .btn-menu__price {
+    transform: translateX(-55px);
+}
+
+.btn-menu:hover > .btn-menu__check {
+    transform: translateX(-55px);
+}
+
+.check {
+    transition: transform 0.25s 0.25s;
+}
+
+.btn-menu:hover .check {
+    transform: rotate(360deg);
+}
+
+.btn-menu:hover > .btn-menu__description {
+    width: 230px;
+    // pas correct de modifier une width, il faudrait un transform
+    // revoir la marge du prix
+}
