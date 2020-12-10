@@ -311,8 +311,35 @@ footer .footer__list li a {
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
 }
-.btn-menu {
-  margin: 100px;
+.menu__title {
+  display: flex;
+  font-family: shrikhand;
+  font-size: 1.2em;
+}
+.menu__title__heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  -webkit-text-stroke: 1px white;
+}
+.menu__bloc {
+  display: flex;
+  flex-direction: column;
+}
+.menu__bloc H2 {
+  font-family: roboto-light;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+}
+.menu__bloc__choix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu__bloc__choix__btn {
   display: flex;
   position: relative;
   width: 350px;
@@ -323,8 +350,7 @@ footer .footer__list li a {
   cursor: pointer;
   overflow: hidden;
 }
-
-.btn-menu__description {
+.menu__bloc__choix__btn__description {
   display: flex;
   margin: 15px;
   flex-direction: column;
@@ -332,36 +358,32 @@ footer .footer__list li a {
   width: 350px;
   transition: width 0.4s 0.1s ease-in-out;
 }
-
-.btn-menu__description__1 {
-  font-family: roboto-regular;
+.menu__bloc__choix__btn__description__1 {
+  font-family: roboto-medium;
   font-weight: bold;
   font-size: 1.1em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.btn-menu__description__2 {
+.menu__bloc__choix__btn__description__2 {
   font-family: roboto-light;
   font-size: 0.9em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.btn-menu__price {
+.menu__bloc__choix__btn__price {
   position: absolute;
   left: 300px;
   margin: 15px;
   bottom: 0;
-  font-family: roboto-regular;
+  font-family: roboto-medium;
   font-weight: bold;
   font-size: 0.9em;
   transition: transform 0.4s 0.1s ease-in-out;
 }
-
-.btn-menu__check {
+.menu__bloc__choix__btn__check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,25 +398,37 @@ footer .footer__list li a {
   border-bottom-right-radius: 20px;
   transition: transform 0.5s ease-in-out;
 }
-
-.btn-menu:hover > .btn-menu__price {
+.menu__bloc__choix__btn:hover > .menu__bloc__choix__btn__price {
   transform: translateX(-55px);
 }
-
-.btn-menu:hover > .btn-menu__check {
+.menu__bloc__choix__btn:hover > .menu__bloc__choix__btn__check {
   transform: translateX(-55px);
 }
-
-.check {
+.menu__bloc__choix__btn .check {
   transition: transform 0.25s 0.25s;
 }
-
-.btn-menu:hover .check {
+.menu__bloc__choix__btn:hover .check {
   transform: rotate(360deg);
 }
-
-.btn-menu:hover > .btn-menu__description {
+.menu__bloc__choix__btn:hover > .menu__bloc__choix__btn__description {
   width: 230px;
+}
+.menu__btn {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  margin: 25px 0;
+  padding: 15px 20px;
+  border-radius: 25px;
+  color: white;
+  font-family: roboto-medium;
+  font-size: 1em;
+  background: linear-gradient(175deg, #FF79DA, #9356DC 80%);
+  box-shadow: 0px 2px 2px 2px #e8e8e8;
+}
+.menu__btn:hover {
+  box-shadow: 0px 2px 5px 5px #e8e8e8;
 }
 
 /*# sourceMappingURL=ohmyfood-style.css.map */

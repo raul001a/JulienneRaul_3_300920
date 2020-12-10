@@ -385,97 +385,146 @@ footer {
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 
-    &__bloc {
-        
+    &__title {
+        display: flex;
+        font-family: $title-police;
+        font-size: 1.2em;
+
+        &__heart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            -webkit-text-stroke: 1px white;
+        }
     }
-}
 
-// à renommer et à nester
+    &__bloc {
+        display: flex;
+        flex-direction: column;
 
-.btn-menu {
-    margin: 100px;
-    display: flex;
-    position: relative;
-    width: 350px;
-    height: 70px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background-color: white;
-    cursor: pointer;
-    overflow: hidden;
-}
+        & H2 {
+            font-family: $text-police-thin;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            border-bottom: 3px solid $third-color;
+            width: 40px;
+            // modifier la height pour que le trait bas soit plus écarté
+        }
 
-.btn-menu__description {
-    display: flex;
-    margin: 15px;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 350px;
-    transition: width 0.4s 0.1s ease-in-out;
-}
+        &__choix {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-.btn-menu__description__1 {
-    font-family: roboto-regular;
-    font-weight: bold;
-    font-size: 1.1em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+            &__btn {
+                // ajouter le box shadow (cf. faire une mixin)
+                display: flex;
+                position: relative;
+                width: 350px;
+                height: 70px;
+                box-sizing: border-box;
+                border-radius: 20px;
+                background-color: white;
+                cursor: pointer;
+                overflow: hidden;
 
-.btn-menu__description__2 {
-    font-family: roboto-light;
-    font-size: 0.9em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+                &__description {
+                    display: flex;
+                    margin: 15px;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 350px;
+                    transition: width 0.4s 0.1s ease-in-out;
 
-.btn-menu__price {
-    position: absolute;
-    left: 300px;
-    margin: 15px;
-    bottom: 0;
-    font-family: roboto-regular;
-    font-weight: bold;
-    font-size: 0.9em;
-    transition: transform 0.4s 0.1s ease-in-out;
-}
+                    &__1 {
+                        font-family: $text-police-thick;
+                        font-weight: bold;
+                        font-size: 1.1em;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
 
-.btn-menu__check {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 350px;
-    background-color: #99E2D0;
-    color: white;
-    font-size: 1.5em;
-    width: 55px;
-    height: 100%;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    transition: transform 0.5s ease-in-out;
-}
+                    &__2 {
+                        font-family: $text-police-thin;
+                        font-size: 0.9em;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
 
-.btn-menu:hover > .btn-menu__price {
-    transform: translateX(-55px);
-}
+                &__price {
+                    position: absolute;
+                    left: 300px;
+                    margin: 15px;
+                    bottom: 0;
+                    font-family: $text-police-thick;
+                    font-weight: bold;
+                    font-size: 0.9em;
+                    transition: transform 0.4s 0.1s ease-in-out;
+                }
 
-.btn-menu:hover > .btn-menu__check {
-    transform: translateX(-55px);
-}
+                &__check {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    left: 350px;
+                    background-color: $third-color;
+                    color: white;
+                    font-size: 1.5em;
+                    width: 55px;
+                    height: 100%;
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    transition: transform 0.5s ease-in-out;
+                }
 
-.check {
-    transition: transform 0.25s 0.25s;
-}
+                &:hover > .menu__bloc__choix__btn__price {
+                    transform: translateX(-55px);
+                }
 
-.btn-menu:hover .check {
-    transform: rotate(360deg);
-}
+                &:hover > .menu__bloc__choix__btn__check {
+                    transform: translateX(-55px);
+                }
 
-.btn-menu:hover > .btn-menu__description {
-    width: 230px;
-    // pas correct de modifier une width, il faudrait un transform
-    // revoir la marge du prix
+                .check {
+                    transition: transform 0.25s 0.25s;
+                }
+
+                &:hover .check {
+                    transform: rotate(360deg);
+                }
+
+                &:hover > .menu__bloc__choix__btn__description {
+                    width: 230px;
+                    // pas correct de modifier une width, il faudrait un transform
+                    // revoir la marge du prix
+                }
+            }
+        }
+    }
+
+    &__btn {
+
+        // pourquoi dans la version dns la page index, il est bien adapté à la taille du texte ??
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        align-items: center;
+        margin: 25px 0;
+        padding: 15px 20px;
+        border-radius: 25px;
+        color: white;
+        font-family: $text-police-thick;
+        font-size: 1em;
+        background: linear-gradient(175deg, $secondary-color, $primary-color 80%);
+        box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
+
+        &:hover {
+            box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
+        }
+    }
 }
