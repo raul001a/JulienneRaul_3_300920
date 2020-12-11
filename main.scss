@@ -46,6 +46,13 @@ body {
     // vérifier que c'est correct
 }
 
+
+// loader à nester + créer une boucle + mettre les bonnes variables + je n'avais pas copié la bonne animation
+
+
+
+
+
 header {
     display: flex;
     height: 65px;
@@ -159,20 +166,42 @@ header {
         display:flex;
         flex-direction:column;
         align-items:center;
-        border:2px solid black;
+        margin:0;
+        padding:0; // pour pouvoir le centrer.
+        border: 2px solid black;
+        // vu sur internet
+        counter-reset: my-awesome-counter;
+        list-style: none;
 
         & li {
             height: 75px;
             width: 320px;
-            border:2px dotted red;
             cursor: pointer;
-            // display:flex; cela enlève les numéros
-            //align-items:center; ne sert à rien sans le display flex
-            
+            display: flex;
+            align-items: center; 
+            //vu sur internet
+            counter-increment: my-awesome-counter;
             border-radius: 25px;
             margin: 10px 0;
             background-color: lighten($background-color,96%);
             box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
+            // attention l'icone est grise et passe en violet quand hover
+
+
+            &::before {
+                //vu sur internet
+                content: counter(my-awesome-counter);
+                color: white;
+                background-color: $primary-color;
+                border-radius: 50%;
+                height: 22px;
+                width: 22px;
+                right: 11px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
 
             &:hover {
                 background-color: lighten($primary-color,35%);
@@ -331,26 +360,23 @@ footer {
         color: white;
         font-family: $text-police-thin;
         font-size: 0.9em;
-        border: 1px yellow solid;
 
         &--bold {
             display: flex;
-            border: 1px green solid;
             font-weight: bold;
 
 
             & :nth-child(2) {
                 /*color: green;*/
                 position: relative;
-                right: -50px;
-                // attention ce n'est pas aligné car le -50px part du bord droit de icon
-                border: 1px purple solid;
+                left: 10px;
             }
 
             & .icon {
                 display: flex;
                 align-items: center;
                 font-size: 0.8em;
+                width:15px; // je mets une taille pour pouvoir positionner plus facilement le texte après
             }
         }
 
