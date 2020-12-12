@@ -74,30 +74,37 @@ header {
     }
 }
 
+.bordure {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(lighten($background-color,60%), lighten($background-color,91%));
+}
+
 .placeholder {
     height: 50Px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: lighten($background-color,91%);
-    //mettre une box-shadow juste sur le haut
+    
     &__search {
         display: flex;
-        align-items:center;
+        align-items: center;
         font-size: 1em;
-        width:165px;
+        width: 165px;
     }
 
     .where {
         font-family: $text-police-thick;
         font-size: 1em;
-        background-color:transparent;
-        border:none;
-        margin-left:15px;
-        color:black;
+        background-color: transparent;
+        border: none;
+        margin-left: 15px;
+        color: black;
+
         &::placeholder {
-            color:black;
-            opacity:1;
+            color: black;
+            opacity: 1;
             // pourquoi ca marche mais j'ai l'erreur dans le lecteur
         }
     }
@@ -152,6 +159,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    
 
     & h1 {
         font-family: $text-police-thick;
@@ -163,12 +171,11 @@ header {
     & ol {
         font-family: $text-police-thick;
         font-size: 1em;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        margin:0;
-        padding:0; // pour pouvoir le centrer.
-        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0; // pour pouvoir le centrer.
         // vu sur internet
         counter-reset: my-awesome-counter;
         list-style: none;
@@ -178,20 +185,19 @@ header {
             width: 320px;
             cursor: pointer;
             display: flex;
-            align-items: center; 
+            align-items: center;
             //vu sur internet
             counter-increment: my-awesome-counter;
             border-radius: 25px;
             margin: 10px 0;
             background-color: lighten($background-color,96%);
             box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
-            // attention l'icone est grise et passe en violet quand hover
-
-
+            
             &::before {
                 //vu sur internet
                 content: counter(my-awesome-counter);
                 color: white;
+                font-size: 0.8em;
                 background-color: $primary-color;
                 border-radius: 50%;
                 height: 22px;
@@ -203,10 +209,21 @@ header {
                 position: relative;
             }
 
+            & :nth-child(1) {
+                color: lighten($background-color,60%);
+                margin: 0 15px;
+                font-size: 1.2em;
+                width: 20px;
+            }
+
             &:hover {
                 background-color: lighten($primary-color,35%);
                 box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
-            }
+
+                > .puce {
+                    color: $primary-color;
+                }
+            }   
         }
     }
 }
@@ -403,18 +420,28 @@ footer {
     }
 }
 
-.menu {
+.bigmenu {
     display: flex;
     flex-direction: column;
     // si je fais Position:relative et bottom:50px, il y a un décalage en bas
     background-color: lighten($background-color,96%);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
+    padding: 20px;
 
     &__title {
         display: flex;
+        flex-direction: row;
         font-family: $title-police;
         font-size: 1.2em;
+        margin: 15px 0;
+
+
+
+        & H1 {
+            margin: 0;
+            padding: 0;
+        }
 
         &__heart {
             display: flex;
@@ -422,126 +449,144 @@ footer {
             align-items: center;
             font-size: 1.5em;
             -webkit-text-stroke: 1px white;
+            margin-left: 30px;
         }
     }
 
-    &__bloc {
+    & .menu {
         display: flex;
         flex-direction: column;
 
-        & H2 {
-            font-family: $text-police-thin;
-            text-transform: uppercase;
-            font-size: 1.1em;
-            border-bottom: 3px solid $third-color;
-            width: 40px;
-            // modifier la height pour que le trait bas soit plus écarté
-        }
-
-        &__choix {
+        &__bloc {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            margin: 15px 0;
 
-            &__btn {
-                // ajouter le box shadow (cf. faire une mixin)
+            & H2 {
+                font-family: $text-police-thin;
+                text-transform: uppercase;
+                font-size: 1.1em;
+                border-bottom: 3px solid $third-color;
+                width: 40px;
+                height: 30px;
+                margin: 5px 0;
+            }
+
+            &__choix {
                 display: flex;
-                position: relative;
-                width: 350px;
-                height: 70px;
-                box-sizing: border-box;
-                border-radius: 20px;
-                background-color: white;
-                cursor: pointer;
-                overflow: hidden;
+                flex-direction: column;
+                align-items: center;
 
-                &__description {
+                &__btn {
+                    
                     display: flex;
-                    margin: 15px;
-                    flex-direction: column;
-                    justify-content: space-between;
+                    position: relative;
                     width: 350px;
-                    transition: width 0.4s 0.1s ease-in-out;
+                    height: 70px;
+                    margin: 7px 0;
+                    box-sizing: border-box;
+                    border-radius: 20px;
+                    background-color: white;
+                    cursor: pointer;
+                    overflow: hidden;
+                    box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
 
-                    &__1 {
+                    &:hover {
+                        box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
+                    }
+
+                    &__description {
+                        display: flex;
+                        margin: 15px;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 350px;
+                        transition: width 0.4s 0.1s ease-in-out;
+
+                        &__1 {
+                            font-family: $text-police-thick;
+                            font-weight: bold;
+                            font-size: 1.1em;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        &__2 {
+                            font-family: $text-police-thin;
+                            font-size: 0.9em;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    &__price {
+                        position: absolute;
+                        left: 300px;
+                        margin: 15px;
+                        bottom: 0;
                         font-family: $text-police-thick;
                         font-weight: bold;
-                        font-size: 1.1em;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-
-                    &__2 {
-                        font-family: $text-police-thin;
                         font-size: 0.9em;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        transition: transform 0.4s 0.1s ease-in-out;
                     }
-                }
 
-                &__price {
-                    position: absolute;
-                    left: 300px;
-                    margin: 15px;
-                    bottom: 0;
-                    font-family: $text-police-thick;
-                    font-weight: bold;
-                    font-size: 0.9em;
-                    transition: transform 0.4s 0.1s ease-in-out;
-                }
+                    &__check {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        left: 350px;
+                        background-color: $third-color;
+                        color: white;
+                        font-size: 1.5em;
+                        width: 55px;
+                        height: 100%;
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        transition: transform 0.5s ease-in-out;
+                    }
 
-                &__check {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    left: 350px;
-                    background-color: $third-color;
-                    color: white;
-                    font-size: 1.5em;
-                    width: 55px;
-                    height: 100%;
-                    border-top-right-radius: 20px;
-                    border-bottom-right-radius: 20px;
-                    transition: transform 0.5s ease-in-out;
-                }
+                    &:hover > .menu__bloc__choix__btn__price {
+                        transform: translateX(-55px);
+                    }
 
-                &:hover > .menu__bloc__choix__btn__price {
-                    transform: translateX(-55px);
-                }
+                    &:hover > .menu__bloc__choix__btn__check {
+                        transform: translateX(-55px);
+                    }
 
-                &:hover > .menu__bloc__choix__btn__check {
-                    transform: translateX(-55px);
-                }
+                    .check {
+                        transition: transform 0.25s 0.25s;
+                    }
 
-                .check {
-                    transition: transform 0.25s 0.25s;
-                }
+                    &:hover .check {
+                        transform: rotate(360deg);
+                    }
 
-                &:hover .check {
-                    transform: rotate(360deg);
-                }
-
-                &:hover > .menu__bloc__choix__btn__description {
-                    width: 230px;
-                    // pas correct de modifier une width, il faudrait un transform
-                    // revoir la marge du prix
+                    &:hover > .menu__bloc__choix__btn__description {
+                        width: 230px;
+                        // pas correct de modifier une width, il faudrait un transform
+                        // revoir la marge du prix
+                    }
                 }
             }
         }
     }
+}
+
+.order {
+    display: flex;
+    justify-content: center;
+    background-color: lighten($background-color,96%);
 
     &__btn {
-
-        // pourquoi dans la version dns la page index, il est bien adapté à la taille du texte ??
         display: flex;
         justify-content: center;
         cursor: pointer;
         align-items: center;
-        margin: 25px 0;
-        padding: 15px 20px;
+        margin: 5px 0 65px 0; // différe du bouton de la première page
+        padding: 15px 45px; // différe du bouton de la première page
         border-radius: 25px;
         color: white;
         font-family: $text-police-thick;
