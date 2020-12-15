@@ -132,9 +132,19 @@ header .header__arrow {
   counter-reset: my-awesome-counter;
   list-style: none;
 }
+@media (min-width: 800px) {
+  .fonct ol {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+}
 .fonct ol li {
   height: 75px;
-  width: 320px;
+  width: 85vw;
+  min-width: 320px;
+  max-width: 380px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -143,6 +153,14 @@ header .header__arrow {
   margin: 10px 0;
   background-color: whitesmoke;
   box-shadow: 0px 2px 2px 2px #e8e8e8;
+}
+@media (min-width: 800px) {
+  .fonct ol li {
+    min-width: 240px;
+    max-width: 300px;
+    width: 30vw;
+    padding-right: 20px;
+  }
 }
 .fonct ol li::before {
   content: counter(my-awesome-counter);
@@ -190,6 +208,13 @@ header .header__arrow {
   align-items: center;
   margin-bottom: 25px;
 }
+@media (min-width: 800px) {
+  .resto__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
 .resto__card {
   display: flex;
   flex-direction: column;
@@ -197,17 +222,27 @@ header .header__arrow {
   text-decoration: none;
   background-color: white;
   color: black;
-  width: 335px;
-  height: 250px;
+  width: 90vw;
+  height: 65vw;
+  min-width: 335px;
+  min-height: 250px;
+  max-width: 550px;
+  max-height: 410px;
   border-radius: 25px;
   margin-bottom: 15px;
   box-shadow: 0px 2px 2px 2px #e8e8e8;
+}
+@media (min-width: 800px) {
+  .resto__card {
+    width: 40vw;
+    height: 30vw;
+  }
 }
 .resto__card:hover {
   box-shadow: 0px 2px 5px 5px #e8e8e8;
 }
 .resto__card__img {
-  height: 173px;
+  height: calc(100% - 78px);
 }
 .resto__card__img img {
   width: 100%;
@@ -218,7 +253,7 @@ header .header__arrow {
 }
 .resto__card__description {
   padding: 10px;
-  height: 162px;
+  height: 78px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -236,7 +271,7 @@ header .header__arrow {
   font-size: 1.5em;
   position: absolute;
   bottom: 50px;
-  left: 290px;
+  right: 45px;
 }
 .resto__card__heart .heart {
   position: absolute;
@@ -304,6 +339,15 @@ footer .footer__list {
   font-family: roboto-light;
   font-size: 0.9em;
 }
+@media (min-width: 800px) {
+  footer .footer__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-right: 150px;
+  }
+}
 footer .footer__list--bold {
   display: flex;
   font-weight: bold;
@@ -329,6 +373,7 @@ footer .footer__list li a {
 
 .photo-menu {
   height: 260px;
+  width: 100%;
 }
 .photo-menu img {
   width: 100%;
@@ -339,6 +384,8 @@ footer .footer__list li a {
 .bigmenu {
   display: flex;
   flex-direction: column;
+  position: relative;
+  bottom: 50px;
   background-color: whitesmoke;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -367,6 +414,13 @@ footer .footer__list li a {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 800px) {
+  .bigmenu .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
 .bigmenu .menu__bloc {
   display: flex;
   flex-direction: column;
@@ -389,7 +443,9 @@ footer .footer__list li a {
 .bigmenu .menu__bloc__choix__btn {
   display: flex;
   position: relative;
-  width: 350px;
+  width: 85vw;
+  min-width: 350px;
+  max-width: 420px;
   height: 70px;
   margin: 7px 0;
   box-sizing: border-box;
@@ -398,6 +454,11 @@ footer .footer__list li a {
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0px 2px 2px 2px #e8e8e8;
+}
+@media (min-width: 800px) {
+  .bigmenu .menu__bloc__choix__btn {
+    width: 30vw;
+  }
 }
 .bigmenu .menu__bloc__choix__btn:hover {
   box-shadow: 0px 2px 5px 5px #e8e8e8;
@@ -427,8 +488,8 @@ footer .footer__list li a {
 }
 .bigmenu .menu__bloc__choix__btn__price {
   position: absolute;
-  left: 300px;
-  margin: 15px;
+  right: 20px;
+  margin-bottom: 15px;
   bottom: 0;
   font-family: roboto-medium;
   font-weight: bold;
@@ -440,7 +501,7 @@ footer .footer__list li a {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 350px;
+  right: -55px;
   background-color: #99E2D0;
   color: white;
   font-size: 1.5em;

@@ -159,7 +159,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    
+
 
     & h1 {
         font-family: $text-police-thick;
@@ -173,6 +173,14 @@ header {
         font-size: 1em;
         display: flex;
         flex-direction: column;
+
+        @media (min-width:800px) {
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content:space-around;
+            margin-bottom:20px;
+        }
+
         align-items: center;
         margin: 0;
         padding: 0; // pour pouvoir le centrer.
@@ -182,7 +190,17 @@ header {
 
         & li {
             height: 75px;
-            width: 320px;
+            width: 85vw;
+            min-width: 320px;
+            max-width: 380px;
+
+            @media (min-width:800px) {
+                min-width: 240px;
+                max-width:300px;
+                width:30vw;
+                padding-right:20px;
+            }
+
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -192,7 +210,7 @@ header {
             margin: 10px 0;
             background-color: lighten($background-color,96%);
             box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
-            
+
             &::before {
                 //vu sur internet
                 content: counter(my-awesome-counter);
@@ -223,7 +241,7 @@ header {
                 > .puce {
                     color: $primary-color;
                 }
-            }   
+            }
         }
     }
 }
@@ -246,6 +264,12 @@ header {
         flex-direction: column;
         align-items: center;
         margin-bottom: 25px;
+        // voir le cours pour faire avec variable et map
+        @media (min-width:800px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:space-evenly;
+        }
     }
 
     &__card {
@@ -255,8 +279,16 @@ header {
         text-decoration: none;
         background-color: white;
         color: black;
-        width: 335px;
-        height: 250px;
+        width: 90vw;
+        height: 65vw;
+        @media (min-width:800px) {
+            width:40vw;
+            height:30vw;
+        }
+        min-width: 335px;
+        min-height: 250px;
+        max-width: 550px;
+        max-height: 410px;
         border-radius: 25px;
         margin-bottom: 15px;
         box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
@@ -266,8 +298,7 @@ header {
         }
 
         &__img {
-            height: 173px;
-
+            height: calc(100% - 78px); // dans la réalité 173 px quand écran fait 365 de large
             & img {
                 width: 100%;
                 height: 100%;
@@ -279,7 +310,7 @@ header {
 
         &__description {
             padding: 10px;
-            height: 162px;
+            height: 78px; // dans la réalité 78px;quand écran fait 365 de large
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -300,7 +331,7 @@ header {
             font-size: 1.5em;
             position: absolute;
             bottom: 50px;
-            left: 290px;
+            right: 45px;
 
             & .heart {
                 position: absolute;
@@ -378,6 +409,15 @@ footer {
         font-family: $text-police-thin;
         font-size: 0.9em;
 
+        @media (min-width:800px) {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding-right:150px;
+            
+        }
+
         &--bold {
             display: flex;
             font-weight: bold;
@@ -393,7 +433,7 @@ footer {
                 display: flex;
                 align-items: center;
                 font-size: 0.8em;
-                width:15px; // je mets une taille pour pouvoir positionner plus facilement le texte après
+                width: 15px; // je mets une taille pour pouvoir positionner plus facilement le texte après
             }
         }
 
@@ -412,6 +452,9 @@ footer {
 
 .photo-menu {
     height: 260px;
+    width:100%;
+    
+    
 
     & img {
         width: 100%;
@@ -423,7 +466,12 @@ footer {
 .bigmenu {
     display: flex;
     flex-direction: column;
+    position:relative;
+    bottom:50px;
+   
+    
     // si je fais Position:relative et bottom:50px, il y a un décalage en bas
+    
     background-color: lighten($background-color,96%);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -457,6 +505,12 @@ footer {
         display: flex;
         flex-direction: column;
 
+        @media (min-width:800px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
         &__bloc {
             display: flex;
             flex-direction: column;
@@ -478,10 +532,17 @@ footer {
                 align-items: center;
 
                 &__btn {
-                    
                     display: flex;
                     position: relative;
-                    width: 350px;
+                    width: 85vw;
+                    min-width: 350px;
+                    max-width: 420px;
+
+                    @media (min-width:800px) {
+                    
+                        width:30vw;
+                    }
+
                     height: 70px;
                     margin: 7px 0;
                     box-sizing: border-box;
@@ -491,9 +552,12 @@ footer {
                     overflow: hidden;
                     box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
 
+
                     &:hover {
                         box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
                     }
+
+
 
                     &__description {
                         display: flex;
@@ -523,8 +587,8 @@ footer {
 
                     &__price {
                         position: absolute;
-                        left: 300px;
-                        margin: 15px;
+                        right: 20px;
+                        margin-bottom: 15px;
                         bottom: 0;
                         font-family: $text-police-thick;
                         font-weight: bold;
@@ -537,7 +601,7 @@ footer {
                         align-items: center;
                         justify-content: center;
                         position: absolute;
-                        left: 350px;
+                        right: -55px;
                         background-color: $third-color;
                         color: white;
                         font-size: 1.5em;
@@ -567,7 +631,7 @@ footer {
                     &:hover > .menu__bloc__choix__btn__description {
                         width: 230px;
                         // pas correct de modifier une width, il faudrait un transform
-                        // revoir la marge du prix
+                        
                     }
                 }
             }
