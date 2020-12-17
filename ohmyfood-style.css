@@ -1,21 +1,115 @@
+@charset "UTF-8";
+/*
 @font-face {
-  font-family: "Shrikhand";
-  src: url("polices/Shrikhand-Regular.ttf");
+    font-family: 'Shrikhand';
+    src: url('polices/Shrikhand-Regular.ttf');
 }
+
 @font-face {
-  font-family: "roboto-light";
-  src: url("polices/roboto-light.ttf");
+    font-family: 'roboto-light';
+    src: url('polices/roboto-light.ttf');
 }
+
 @font-face {
-  font-family: "roboto-medium";
-  src: url("polices/roboto-medium.ttf");
+    font-family: 'roboto-medium';
+    src: url('polices/roboto-medium.ttf');
 }
+*/
+/*
+$text-police-thick:roboto-medium;
+$text-police-thin:roboto-light;
+*/
 body {
   margin: 0 auto;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.loader {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(175deg, #FF79DA, #9356DC 70%);
+  animation: fading 1.5s 3.7s forwards;
+}
+
+@keyframes fading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+.text-logo {
+  font-family: shrikhand;
+  width: 270px;
+  font-size: 3em;
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes apparition-logo {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+/*boucle à crééer formule : 800-ix100*/
+.text-logo label:nth-child(8) {
+  animation: apparition-logo 3s both ease-in-out;
+}
+
+.text-logo label:nth-child(7) {
+  animation: apparition-logo 3s 100ms both ease-in-out;
+}
+
+.text-logo label:nth-child(6) {
+  animation: apparition-logo 3s 200ms both ease-in-out;
+}
+
+.text-logo label:nth-child(5) {
+  animation: apparition-logo 3s 300ms both ease-in-out;
+}
+
+.text-logo label:nth-child(4) {
+  animation: apparition-logo 3s 400ms both ease-in-out;
+}
+
+.text-logo label:nth-child(3) {
+  animation: apparition-logo 3s 500ms both ease-in-out;
+}
+
+.text-logo label:nth-child(2) {
+  animation: apparition-logo 3s 600ms both ease-in-out;
+}
+
+.text-logo label:nth-child(1) {
+  animation: apparition-logo 3s 700ms both ease-in-out;
+}
+
+#bloc_page {
+  position: absolute;
+  width: 100%;
 }
 
 header {
@@ -57,7 +151,7 @@ header .header__arrow {
   width: 165px;
 }
 .placeholder .where {
-  font-family: roboto-medium;
+  font-family: roboto;
   font-size: 1em;
   background-color: transparent;
   border: none;
@@ -74,14 +168,13 @@ header .header__arrow {
   flex-direction: column;
   align-items: center;
   padding: 25px 10px;
+  font-family: roboto;
   background-color: whitesmoke;
 }
 .intro h1 {
   width: 70%;
   text-align: center;
-  font-family: roboto-medium;
   font-size: 1.4em;
-  font-weight: bold;
   margin: 15px 0;
 }
 .intro p {
@@ -89,8 +182,8 @@ header .header__arrow {
   margin: 5px 0;
   margin: 0;
   text-align: center;
-  font-family: roboto-light;
   font-size: 1.1em;
+  font-weight: 300;
 }
 .intro__btn {
   display: flex;
@@ -101,7 +194,6 @@ header .header__arrow {
   padding: 15px 20px;
   border-radius: 25px;
   color: white;
-  font-family: roboto-medium;
   font-size: 1em;
   background: linear-gradient(175deg, #FF79DA, #9356DC 80%);
   box-shadow: 0px 2px 2px 2px #e8e8e8;
@@ -114,15 +206,13 @@ header .header__arrow {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  font-family: roboto;
 }
 .fonct h1 {
-  font-family: roboto-medium;
   font-size: 1.4em;
-  font-weight: bold;
   margin: 30px 0px;
 }
 .fonct ol {
-  font-family: roboto-medium;
   font-size: 1em;
   display: flex;
   flex-direction: column;
@@ -195,11 +285,10 @@ header .header__arrow {
   flex-direction: column;
   background-color: whitesmoke;
   padding: 20px;
+  font-family: roboto;
 }
 .resto h1 {
-  font-family: roboto-medium;
   font-size: 1.4em;
-  font-weight: bold;
   margin: 30px 0px;
 }
 .resto__list {
@@ -259,13 +348,12 @@ header .header__arrow {
   justify-content: space-around;
 }
 .resto__card__description__name {
-  font-family: roboto-medium;
   font-size: 1.1em;
   font-weight: bold;
 }
 .resto__card__description__place {
-  font-family: roboto-light;
   font-size: 1.1em;
+  font-weight: 300;
 }
 .resto__card__heart {
   font-size: 1.5em;
@@ -312,7 +400,6 @@ header .header__arrow {
   height: 28px;
   width: 78px;
   border-radius: 2px;
-  font-family: roboto-medium;
   font-size: 0.9em;
   font-weight: bold;
   color: #278870;
@@ -336,7 +423,8 @@ footer .footer__list {
   padding-left: 0;
   margin: 20px 0;
   color: white;
-  font-family: roboto-light;
+  font-family: roboto;
+  font-weight: 300;
   font-size: 0.9em;
 }
 @media (min-width: 800px) {
@@ -350,7 +438,7 @@ footer .footer__list {
 }
 footer .footer__list--bold {
   display: flex;
-  font-weight: bold;
+  font-weight: 500;
 }
 footer .footer__list--bold :nth-child(2) {
   /*color: green;*/
@@ -425,11 +513,12 @@ footer .footer__list li a {
   display: flex;
   flex-direction: column;
   margin: 15px 0;
+  font-family: roboto;
 }
 .bigmenu .menu__bloc H2 {
-  font-family: roboto-light;
   text-transform: uppercase;
   font-size: 1.1em;
+  font-weight: 300;
   border-bottom: 3px solid #99E2D0;
   width: 40px;
   height: 30px;
@@ -472,15 +561,14 @@ footer .footer__list li a {
   transition: width 0.4s 0.1s ease-in-out;
 }
 .bigmenu .menu__bloc__choix__btn__description__1 {
-  font-family: roboto-medium;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.1em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .bigmenu .menu__bloc__choix__btn__description__2 {
-  font-family: roboto-light;
+  font-weight: 300;
   font-size: 0.9em;
   white-space: nowrap;
   overflow: hidden;
@@ -491,7 +579,6 @@ footer .footer__list li a {
   right: 20px;
   margin-bottom: 15px;
   bottom: 0;
-  font-family: roboto-medium;
   font-weight: bold;
   font-size: 0.9em;
   transition: transform 0.4s 0.1s ease-in-out;
@@ -527,10 +614,70 @@ footer .footer__list li a {
   width: 230px;
 }
 
+.menu__bloc:nth-child(1) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 1s forwards;
+}
+.menu__bloc:nth-child(1) .menu__bloc__choix__btn:nth-child(1) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 1.25s forwards;
+}
+.menu__bloc:nth-child(1) .menu__bloc__choix__btn:nth-child(2) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 1.5s forwards;
+}
+.menu__bloc:nth-child(1) .menu__bloc__choix__btn:nth-child(3) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 1.75s forwards;
+}
+.menu__bloc:nth-child(2) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 2s forwards;
+}
+.menu__bloc:nth-child(2) .menu__bloc__choix__btn:nth-child(1) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 2.25s forwards;
+}
+.menu__bloc:nth-child(2) .menu__bloc__choix__btn:nth-child(2) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 2.5s forwards;
+}
+.menu__bloc:nth-child(2) .menu__bloc__choix__btn:nth-child(3) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 2.75s forwards;
+}
+.menu__bloc:nth-child(3) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 3s forwards;
+}
+.menu__bloc:nth-child(3) .menu__bloc__choix__btn:nth-child(1) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 3.25s forwards;
+}
+.menu__bloc:nth-child(3) .menu__bloc__choix__btn:nth-child(2) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 3.5s forwards;
+}
+.menu__bloc:nth-child(3) .menu__bloc__choix__btn:nth-child(3) {
+  opacity: 0;
+  animation: apparition-plat 0.3s 3.75s forwards;
+}
+
+@keyframes apparition-plat {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(O);
+  }
+}
 .order {
   display: flex;
   justify-content: center;
   background-color: whitesmoke;
+  font-family: roboto;
 }
 .order__btn {
   display: flex;
@@ -541,7 +688,6 @@ footer .footer__list li a {
   padding: 15px 45px;
   border-radius: 25px;
   color: white;
-  font-family: roboto-medium;
   font-size: 1em;
   background: linear-gradient(175deg, #FF79DA, #9356DC 80%);
   box-shadow: 0px 2px 2px 2px #e8e8e8;
