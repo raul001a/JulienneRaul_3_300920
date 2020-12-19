@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="ohmyfood-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Shrikhand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/18b7f90565.js" crossorigin="anonymous"></script>
     <title>ohmyfood - A la française</title>
 </head>
@@ -18,48 +19,113 @@
             <a class="header__arrow" href="index.html"><i class="fas fa-arrow-left"></i></a>
         </header>
 
-        <img src="images/francaise.jpg" alt="photo du restaurant à la française" />
+        <section class="photo-menu">
+            <img src="images/francaise.jpg" alt="photo du restaurant à la française" />
+        </section>
 
-        À la française
+        <section class="bigmenu">
+            <div class="bigmenu__title">
+                <h1>À la française</h1>
+                <div class="bigmenu__title__heart"><i class="far fa-heart heart"></i></div>
+            </div>
+            <div class="menu">
+                <div class="menu__bloc">
+                    <h2>Entrées </h2>
+                    <div class="menu__bloc__choix">
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Tartare de poulpe acidulé</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Aux zestes d'orange</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 25€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Velouté de légumes d'antan</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Carotte, panais, topinambour</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 35€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Soupe à l'oignon</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Revisitée</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 20€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                    </div>
+                </div>
 
-        Entrées
-        Tartare de poulpe acidulé
-        Aux zestes d'orange
-        25€
+                <div class="menu__bloc">
+                    <h2>Plat </h2>
+                    <div div class="menu__bloc__choix">
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Coquilles Saint-Jacques</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Accompagnées d'une purée de panais</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 40€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Magret de canard</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Et parmentier de pommes de terre</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 35€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Pigeonneau d’Ille-et-Vilaine</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Sur son lit de gnocchis aux légumes</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 44€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                    </div>
+                </div>
+                
+                <div class="menu__bloc">
+                    <h2>Desserts </h2>
+                    <div div class="menu__bloc__choix">
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Pétales de violettes glacés</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Et purée de noisettes</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 18€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Fondant au chocolat</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Revisité</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 22€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                        <container class="menu__bloc__choix__btn">
+                            <div class="menu__bloc__choix__btn__description">
+                                <div class="menu__bloc__choix__btn__description__1"> Millefeuille croustillant</div>
+                                <div class="menu__bloc__choix__btn__description__2"> Myrtilles et pâte d’amande</div>
+                            </div>
+                            <div class="menu__bloc__choix__btn__price"> 23€ </div>
+                            <div class="menu__bloc__choix__btn__check"><i class="fas fa-check-circle check "></i></div>
+                        </container>
+                    </div>
+                </div>
+            </div>
+            <div class="order">
+                <div class="order__btn">
+                    Commander
+                </div>
+            </div>
 
-        Velouté de légumes d'antan
-        Carotte, panais, topinambour
-        35€
-
-        Soupe à l'oignon
-        Revisitée
-        20€
-
-        Plats
-        Coquilles Saint-Jacques
-        Accompagnées d'une purée de panais
-        40€
-
-        Magret de canard
-        Et parmentier de pommes de terre
-        35€
-
-        Pigeonneau d’Ille-et-Vilaine
-        Sur son lit de gnocchis aux légumes
-        44€
-
-        Desserts
-        Pétales de violettes glacés
-        Et purée de noisettes
-        18€
-
-        Fondant au chocolat
-        Revisité
-        22€
-
-        Millefeuille croustillant
-        Myrtilles et pâte d’amande
-        23€
+        </section>
 
         <footer>
             <div class="footer__logo">
