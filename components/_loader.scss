@@ -1,0 +1,84 @@
+﻿.loader {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    @include fond-degrade-colore;
+    animation: fading 1.5s 3.7s forwards;
+}
+
+
+// animation pour la disparition du loader
+@keyframes fading {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+.text-logo {
+    font-family: $title-police;
+    width: 270px;
+    font-size: map-get($font-size,size5);
+    display: flex;
+    flex-direction: row;
+}
+// animation pour l'apparition des lettres les unes après les autres
+@keyframes apparition-logo {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    66% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    99.9% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+}
+
+
+// boucle pour l'apparition des 8 lettres
+@for $i from 1 through 8 {
+    .text-logo span:nth-child(#{$i}) {
+        animation: apparition-logo 3s (0.8-$i*0.1)*$animation-delay both ease-in-out;
+    }
+}
+
+
+// animation pour apparition de la première page après la disparition du loader
+// pour ne pas qu'elle apparaisse en-dessous pendant l'apparition du loader
+.page_index {
+    animation: apparition-bloc_page 1ms 3.7s both;
+}
+
+@keyframes apparition-bloc_page {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

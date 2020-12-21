@@ -1,0 +1,15 @@
+﻿.btn-gradient {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    margin: 25px 0;
+    padding: 15px 20px;
+    min-width: 185px;
+    border-radius: 25px;
+    color: white;
+    font-family: $text-police;
+    font-size: map-get($font-size,size2);
+    @include fond-degrade-colore;
+    @include box-shadow;
+}

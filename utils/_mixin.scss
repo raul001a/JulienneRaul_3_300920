@@ -1,0 +1,18 @@
+﻿// mixin pour le fond dégradé des deux couleurs principales
+@mixin fond-degrade-colore {
+    background: linear-gradient(175deg, $secondary-color, $primary-color 80%);
+}
+
+// mixin pour les box-shadow et leur hover
+@mixin box-shadow {
+    box-shadow: 0px 2px 2px 2px lighten($background-color, 91%);
+
+    &:hover {
+        box-shadow: 0px 2px 5px 5px lighten($background-color, 91%);
+    }
+}
+
+// mixin pour les différentes nuances de fond gris (et éventuellement autres couleurs)
+@mixin couleur-fond ($color: $background-color,$percentage: 96%) {
+    background-color: lighten($color,$percentage);
+}

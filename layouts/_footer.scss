@@ -1,0 +1,61 @@
+﻿footer {
+    height: 200px;
+    @include couleur-fond($percentage:20%);
+    padding: 25px;
+
+    .footer__logo {
+        width: 100px;
+
+        & img {
+            width: 100%;
+            //vu sur internet, pour passer une image SVG en blanc
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(101%);
+        }
+    }
+
+    .footer__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 20px 0;
+        color: white;
+        font-family: $text-police;
+        font-weight: map-get($font-weight,thin);
+        font-size: map-get($font-size,size2);
+
+        @media (min-width:800px) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding-right: 150px;
+        }
+
+        &--bold {
+            display: flex;
+            font-weight: map-get($font-weight,medium);
+
+
+            & :nth-child(2) {
+                /*color: green;*/
+                position: relative;
+                left: 10px;
+            }
+
+            & .icon {
+                display: flex;
+                align-items: center;
+                font-size: map-get($font-size,size1);
+                width: 15px; // je mets une taille pour pouvoir positionner plus facilement le texte après
+            }
+        }
+
+        & li {
+            margin: 10px 0;
+
+            & a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}

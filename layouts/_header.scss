@@ -1,0 +1,22 @@
+﻿header {
+    display: flex;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    .header__logo {
+        width: 165px;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    .header__arrow {
+        font-size: map-get($font-size,size3);
+        color: black;
+        position: relative;
+        right: 240px;
+    }
+}

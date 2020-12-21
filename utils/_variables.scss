@@ -1,0 +1,24 @@
+﻿//variables
+
+//polices
+$title-police: shrikhand;
+$text-police: roboto;
+
+
+// peut-etre créer une map avec les tailles de polices
+// comment gérer les tailles avec em
+
+//couleurs
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$third-color: #99E2D0;
+$background-color: black;
+
+// delai pour les animations
+$animation-delay: 1s;
+
+// map pour les différents poids de font
+$font-weight: (thin: 300, medium: 500, bold: 700);
+
+//map pour les différentes size de police
+$font-size: (size1:0.9em, size2:1em, size3:1.1em, size4:1.5em, size5:3em);

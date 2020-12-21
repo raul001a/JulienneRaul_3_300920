@@ -1,0 +1,285 @@
+﻿.bordure {
+    height: 5px;
+    background: linear-gradient(lighten($background-color,60%), lighten($background-color,91%));
+}
+
+.placeholder {
+    height: 50Px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include couleur-fond($percentage:91%);
+
+    &__search {
+        display: flex;
+        align-items: center;
+        font-size: map-get($font-size,size2);
+        width: 165px;
+    }
+
+    .where {
+        font-family: $text-police;
+        font-size: map-get($font-size,size2);
+        background-color: transparent;
+        border: none;
+        margin-left: 15px;
+        color: black;
+
+        &::placeholder {
+            color: black;
+            opacity: 1;
+            // pourquoi ca marche mais j'ai l'erreur dans le lecteur
+        }
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 10px;
+    font-family: $text-police;
+
+
+    & h1 {
+        width: 70%;
+        text-align: center;
+        font-size: map-get($font-size,size4);
+        margin: 15px 0;
+    }
+
+    & p {
+        width: 90%;
+        margin: 5px 0;
+        margin: 0;
+        text-align: center;
+        font-size: map-get($font-size,size3);
+        font-weight: map-get($font-weight,thin);
+    }
+}
+
+.fonct {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 60px;
+    font-family: $text-police;
+    background-color: white;
+
+
+    & h1 {
+        font-size: map-get($font-size,size4);
+        margin: 30px 0px;
+    }
+
+    & ol {
+        font-size: map-get($font-size,size2);
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width:800px) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        align-items: center;
+        margin: 0;
+        padding: 0; // pour pouvoir le centrer.
+        // vu sur internet
+        counter-reset: my-awesome-counter;
+        list-style: none;
+
+        & li {
+            height: 75px;
+            width: 85vw;
+            min-width: 320px;
+            max-width: 380px;
+
+            @media (min-width:800px) {
+                min-width: 240px;
+                max-width: 300px;
+                width: 30vw;
+                padding-right: 20px;
+            }
+
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            //vu sur internet
+            counter-increment: my-awesome-counter;
+            border-radius: 25px;
+            margin: 10px 0;
+            @include couleur-fond;
+            @include box-shadow;
+
+            &::before {
+                //vu sur internet
+                content: counter(my-awesome-counter);
+                color: white;
+                font-size: map-get($font-size,size1);
+                background-color: $primary-color;
+                border-radius: 50%;
+                height: 22px;
+                width: 22px;
+                right: 11px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            & :nth-child(1) {
+                color: lighten($background-color,60%);
+                margin: 0 15px;
+                font-size: map-get($font-size,size3);
+                width: 20px;
+            }
+
+            &:hover {
+                @include couleur-fond($color:$primary-color,$percentage:35%);
+
+                > .puce {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.resto {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: $text-police;
+
+    & h1 {
+        font-size: map-get($font-size,size4);
+        margin: 30px 0px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+
+        @media (min-width:800px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        width: 90vw;
+        height: 65vw;
+
+        @media (min-width:800px) {
+            width: 40vw;
+            height: 30vw;
+        }
+
+        min-width: 335px;
+        min-height: 250px;
+        max-width: 550px;
+        max-height: 410px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+        @include box-shadow;
+
+        &__img {
+            height: calc(100% - 78px);
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+            }
+        }
+
+        &__description {
+            padding: 10px;
+            height: 78px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            &__name {
+                font-size: map-get($font-size,size3);
+                font-weight: map-get($font-weight,bold);
+            }
+
+            &__place {
+                font-size: map-get($font-size,size3);
+                font-weight: map-get($font-weight,thin);
+            }
+        }
+
+        &__heart {
+            font-size: map-get($font-size,size4);
+            position: absolute;
+            bottom: 50px;
+            right: 45px;
+
+            & .heart {
+                position: absolute;
+                top: 0;
+                left: 0;
+                -webkit-text-stroke: 1px white;
+                cursor: pointer;
+                transition: 0s 0.28s;
+                color: black;
+            }
+
+            & .heart--full {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include fond-degrade-colore;
+                -webkit-background-clip: text;
+                // ca marche mais j'ai l'erreur dans le lecteur
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 0px white;
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: 50% 90%;
+                transition: 0.3s ease-in-out;
+            }
+
+            & .heart:hover > .heart--full {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            & .heart:hover {
+                color: white;
+            }
+        }
+
+        &__new {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            height: 28px;
+            width: 78px;
+            border-radius: 2px;
+            font-size: map-get($font-size,size1);
+            font-weight: map-get($font-weight,bold);
+            color: darken($third-color,40%);
+            background-color: $third-color;
+        }
+    }
+}
