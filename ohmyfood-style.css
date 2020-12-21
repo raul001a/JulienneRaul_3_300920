@@ -415,7 +415,7 @@ footer .footer__list li a {
   left: 0;
   background: linear-gradient(175deg, #FF79DA, #9356DC 80%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
   -webkit-text-stroke: 0px white;
   opacity: 0;
   transform: scale(0);
@@ -672,7 +672,7 @@ footer .footer__list li a {
   }
   100% {
     opacity: 1;
-    transform: translateY(O);
+    transform: translateY(0);
   }
 }
 body {
