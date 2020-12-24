@@ -1,0 +1,13 @@
+.vs/
+components/
+images/
+layouts/
+pages/
+utils/
+main.scss
+ohmyfood-style.css
+ohmyfood-style.css.map
+package.json
+package-lock.json
+
+
