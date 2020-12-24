@@ -29,6 +29,7 @@
         font-family: $title-police;
         font-size: map-get($font-size,size3);
         margin: 15px 0;
+        justify-content: space-between;
 
 
 
@@ -38,12 +39,9 @@
         }
 
         &__heart {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            
             font-size: map-get($font-size,size4);
-            -webkit-text-stroke: 1px white;
-            margin-left: 30px;
+            
         }
     }
 

@@ -397,37 +397,8 @@ footer .footer__list li a {
 .resto__card__heart {
   font-size: 1.5em;
   position: absolute;
-  bottom: 50px;
-  right: 45px;
-}
-.resto__card__heart .heart {
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-text-stroke: 1px white;
-  cursor: pointer;
-  transition: 0s 0.28s;
-  color: black;
-}
-.resto__card__heart .heart--full {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(175deg, #FF79DA, #9356DC 80%);
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 0px white;
-  opacity: 0;
-  transform: scale(0);
-  transform-origin: 50% 90%;
-  transition: 0.3s ease-in-out;
-}
-.resto__card__heart .heart:hover > .heart--full {
-  transform: scale(1);
-  opacity: 1;
-}
-.resto__card__heart .heart:hover {
-  color: white;
+  bottom: 30px;
+  right: 25px;
 }
 .resto__card__new {
   display: flex;
@@ -471,18 +442,14 @@ footer .footer__list li a {
   font-family: shrikhand;
   font-size: 1.1em;
   margin: 15px 0;
+  justify-content: space-between;
 }
 .bigmenu__title H1 {
   margin: 0;
   padding: 0;
 }
 .bigmenu__title__heart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.5em;
-  -webkit-text-stroke: 1px white;
-  margin-left: 30px;
 }
 .bigmenu .menu {
   display: flex;
@@ -687,6 +654,36 @@ body {
   position: absolute;
   width: 100%;
   background-color: whitesmoke;
+}
+
+.heart--gradient {
+  -webkit-text-stroke: 1px white;
+  cursor: pointer;
+  transition: 0s 0.28s;
+  color: black;
+}
+
+.heart--gradient--full {
+  position: relative;
+  top: 0px;
+  left: -55%;
+  background: linear-gradient(175deg, #FF79DA, #9356DC 80%);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0px white;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: 50% 90%;
+  transition: 0.3s ease-in-out;
+}
+
+.heart--gradient:hover > .heart--gradient--full {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.heart--gradient:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=ohmyfood-style.css.map */

@@ -1,0 +1,33 @@
+﻿
+.heart--gradient {
+    -webkit-text-stroke: 1px white;
+    cursor: pointer;
+    transition: 0s 0.28s;
+    color: black;
+}
+
+.heart--gradient--full {
+    position: relative;
+    top: 0px;
+    left: -55%;
+    @include fond-degrade-colore;
+    -webkit-background-clip: text;
+    //si je ne mets pas le webkit, j'ai une erreur sur text, si je mets webkit, j'ai un avertissement
+    // ca marche mais j'ai l'erreur dans le lecteur
+    color: transparent;
+    -webkit-text-stroke: 0px white;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 50% 90%;
+    transition: 0.3s ease-in-out;
+}
+
+.heart--gradient:hover > .heart--gradient--full {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+.heart--gradient:hover {
+    color: white;
+}

@@ -15,6 +15,9 @@
 // le bouton avec dégradé
 @import "./components/btn-gradient";
 
+//le coeur dégradé et son animation
+@import "./components/heart-gradient";
+
 
 //intégration des layouts
 //le header 
@@ -44,6 +47,7 @@ body {
     width: 100%;
     @include couleur-fond;    
 }
+
 
 
 

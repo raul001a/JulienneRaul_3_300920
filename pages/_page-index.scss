@@ -228,43 +228,9 @@
         &__heart {
             font-size: map-get($font-size,size4);
             position: absolute;
-            bottom: 50px;
-            right: 45px;
-
-            & .heart {
-                position: absolute;
-                top: 0;
-                left: 0;
-                -webkit-text-stroke: 1px white;
-                cursor: pointer;
-                transition: 0s 0.28s;
-                color: black;
-            }
-
-            & .heart--full {
-                position: absolute;
-                top: 0;
-                left: 0;
-                @include fond-degrade-colore;
-                -webkit-background-clip: text;
-                //si je ne mets pas le webkit, j'ai une erreur sur text, si je mets webkit, j'ai un avertissement
-                // ca marche mais j'ai l'erreur dans le lecteur
-                color: transparent;
-                -webkit-text-stroke: 0px white;
-                opacity: 0;
-                transform: scale(0);
-                transform-origin: 50% 90%;
-                transition: 0.3s ease-in-out;
-            }
-
-            & .heart:hover > .heart--full {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            & .heart:hover {
-                color: white;
-            }
+            bottom: 30px;
+            right: 25px;
+           
         }
 
         &__new {
